@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/yourcode.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./static/style.css" />
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+    <title>Contacts</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <h2 class="title">Contacts</h2>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <div>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Edit</th>
+            </tr>
+            {% for contact in contacts %}
+            <tr>
+              <td>{{contact.name.capitalize()}}</td>
+              <td>{{contact.email.value}}</td>
+              <td>{{contact.phone.value}}</td>
+              <td>
+                <div>
+                  <button class="button button3">
+                    <a href="/delete/{{contact.id}}">Delete</a>
+                  </button>
+                  <button class="button button2">
+                    <a href="/contact/{{contact.id}}">Edit</a>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            {% endfor%}
+          </table>
+        </div>
+        <div class="center">
+          <button class="button button1">
+            <a href="/contact"> Add Contact</a>
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

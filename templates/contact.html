@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/style.css" />
+    <title>Add Contact</title>
+  </head>
+  <body>
+    <div class="container center">
+      <form method="POST" action="{{action}}">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" placeholder="User" /><br />
+        <label for="email">Email:</label><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="test@mail.com"
+        /><br />
+        <label for="phone">Phone:</label><br />
+        <input
+          type="phone"
+          id="phone"
+          name="phone"
+          placeholder="(095)457-12-12"
+        /><br /><br />
+        <input type="submit" value="Submit" class="button button1" />
+      </form>
+    </div>
+  </body>
+</html>
